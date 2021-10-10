@@ -1,19 +1,13 @@
 require('nvim-autopairs').setup({
   check_ts = true,
 })
-local remap = vim.api.nvim_set_keymap
-local npairs = require('nvim-autopairs')
-
--- skip it, if you use another global object
-_G.MUtils= {}
-
-MUtils.completion_confirm=function()
-  if vim.fn.pumvisible() ~= 0  then
-      return npairs.esc("<cr>")
-  else
-    return npairs.autopairs_cr()
-  end
-end
-
-
-remap('i' , '<CR>','v:lua.MUtils.completion_confirm()', {expr = true , noremap = true})
+require("nvim-autopairs.completion.cmp").setup({
+  map_cr = true, --  map <CR> on insert mode
+  map_complete = true, -- it will auto insert `(` (map_char) after select function or method item
+  auto_select = true, -- automatically select the first item
+  insert = false, -- use insert confirm behavior instead of replace
+  map_char = { -- modifies the function or method delimiter by filetypes
+    all = '(',
+    tex = '{'
+  }
+})
