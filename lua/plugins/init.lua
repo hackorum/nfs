@@ -1,7 +1,7 @@
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
-  use 'tiagovla/tokyodark.nvim'
+  use 'rose-pine/neovim'
   use {'nvim-treesitter/nvim-treesitter', run = ":TSUpdate"}
   use {
     'hoob3rt/lualine.nvim',
@@ -37,4 +37,5 @@ return require('packer').startup(function(use)
       require('gitsigns').setup{current_line_blame = true}
     end
   }
+  use 'glepnir/dashboard-nvim'
 end)
