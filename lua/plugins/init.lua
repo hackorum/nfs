@@ -38,4 +38,5 @@ return require('packer').startup(function(use)
     end
   }
   use 'glepnir/dashboard-nvim'
+  use "lukas-reineke/indent-blankline.nvim"
 end)
