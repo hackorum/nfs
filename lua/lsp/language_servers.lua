@@ -36,7 +36,6 @@ local langservers = {
   'cssls',
   'tsserver',
   'pylsp',
-  'ls_emmet',
   'sumneko_lua'
 }
 
