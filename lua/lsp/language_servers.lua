@@ -4,7 +4,7 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protoco
 require'lspconfig.configs'.ls_emmet = {
   default_config = {
     cmd = {'ls_emmet', '--stdio'},
-    filetypes = {'html', 'css', 'scss'}, -- Add the languages you use, see language support
+    filetypes = {'html', 'css', 'scss', 'jsx', 'javascriptreact', 'js'}, -- Add the languages you use, see language support
     root_dir = function(_)
       return vim.loop.cwd()
     end,
