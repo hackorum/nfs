@@ -32,4 +32,5 @@ return require('packer').startup(function(use)
   use {"akinsho/toggleterm.nvim", config = "require('toggleterm-config')"}
   use {"terrortylor/nvim-comment", config = "require('comment-config')"}
   use {'tami5/lspsaga.nvim', config = "require('lspsaga-config')"}
+  use {'williamboman/nvim-lsp-installer'}
 end)
