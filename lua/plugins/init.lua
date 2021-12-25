@@ -26,10 +26,10 @@ return require('packer').startup(function(use)
       require('gitsigns').setup {current_line_blame = true}
     end
   }
-  use {'glepnir/dashboard-nvim', cmd = "Dashboard", config = "require('dashboard-config')"}
+  use {'glepnir/dashboard-nvim', event = "BufRead", config = "require('dashboard-config')"}
   use {"lukas-reineke/indent-blankline.nvim", config = "require('blankline-config')", event = "BufRead"}
-  use {'lukas-reineke/format.nvim', config = "require('format-config')", cmd = "Format"}
+  use {'lukas-reineke/format.nvim', config = "require('format-config')"}
   use {"akinsho/toggleterm.nvim", config = "require('toggleterm-config')"}
-  use {"terrortylor/nvim-comment", config = "require('comment-config')", cmd = "CommentToggle"}
-  use { 'tami5/lspsaga.nvim', config = "require('lspsaga-config')" }
+  use {"terrortylor/nvim-comment", config = "require('comment-config')"}
+  use {'tami5/lspsaga.nvim', config = "require('lspsaga-config')"}
 end)
