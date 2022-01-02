@@ -15,6 +15,7 @@ wk.setup {
     }
   }
 }
+
 local Terminal = require('toggleterm.terminal').Terminal
 local toggle_float = function()
   local float = Terminal:new({direction = "float"})
@@ -24,6 +25,7 @@ local toggle_lazygit = function()
   local lazygit = Terminal:new({cmd = 'lazygit', direction = "float"})
   return lazygit:toggle()
 end
+
 local mappings = {
   q = {":q<cr>", "Quit"},
   Q = {":wq<cr>", "Save & Quit"},
@@ -57,7 +59,13 @@ local mappings = {
     e = {'<cmd>Lspsaga show_line_diagnostics<cr>', "Show Line Diagnostics"},
     n = {'<cmd>Lspsaga diagnostic_jump_next<cr>', "Go To Next Diagnostic"},
     N = {'<cmd>Lspsaga diagnostic_jump_prev<cr>', "Go To Previous Diagnostic"}
+  },
+  z = {
+    name = "Focus",
+    z = {":ZenMode<cr>", "Toggle Zen Mode"},
+    t = {":Twilight<cr>", "Toggle Twilight"}
   }
 }
+
 local opts = {prefix = '<leader>'}
 wk.register(mappings, opts)
