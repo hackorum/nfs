@@ -9,10 +9,10 @@ return require('packer').startup(function(use)
     config = "require('treesitter-config')"
   }
   use {
-    'hoob3rt/lualine.nvim',
+    'tamton-aquib/staline.nvim',
     requires = {'kyazdani42/nvim-web-devicons', opt = true},
-    event = "BufWinEnter",
-    config = "require('lualine-config')"
+    event = "BufRead",
+    config = "require('staline-config')"
   }
   use {
     'akinsho/bufferline.nvim',
@@ -64,4 +64,5 @@ return require('packer').startup(function(use)
   use {'jose-elias-alvarez/null-ls.nvim', config = "require('null-ls-config')"}
   use {"folke/zen-mode.nvim", config = 'require("zen-mode-config")'}
   use {"folke/twilight.nvim", config = "require('twilight-config')"}
+  use {'andweeb/presence.nvim', config = "require('presence-config')"}
 end)
